@@ -139,34 +139,28 @@ class _CupertinoControlsState extends State<CupertinoControls>
         margin: EdgeInsets.all(marginSize),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(10.0),
-          child: BackdropFilter(
-            filter: ui.ImageFilter.blur(
-              sigmaX: 10.0,
-              sigmaY: 10.0,
-            ),
-            child: Container(
-              height: barHeight,
-              color: backgroundColor,
-              child: chewieController.isLive
-                  ? Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        _buildPlayPause(controller, iconColor, barHeight),
-                        _buildLive(iconColor),
-                      ],
-                    )
-                  : Row(
-                      children: <Widget>[
-                        _buildSkipBack(iconColor, barHeight),
-                        _buildPlayPause(controller, iconColor, barHeight),
-                        _buildSkipForward(iconColor, barHeight),
-                        _buildPosition(iconColor),
-                        _buildProgressBar(),
-                        _buildRemaining(iconColor),
-                        if (chewieController.allowPlaybackSpeedChanging)
-                          _buildSpeedButton(controller, iconColor, barHeight),
-                      ],
-                    ),
+          child: Container(
+            height: barHeight,
+            color: backgroundColor,
+            child: chewieController.isLive
+                ? Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                _buildPlayPause(controller, iconColor, barHeight),
+                _buildLive(iconColor),
+              ],
+            )
+                : Row(
+              children: <Widget>[
+                _buildSkipBack(iconColor, barHeight),
+                _buildPlayPause(controller, iconColor, barHeight),
+                _buildSkipForward(iconColor, barHeight),
+                _buildPosition(iconColor),
+                _buildProgressBar(),
+                _buildRemaining(iconColor),
+                if (chewieController.allowPlaybackSpeedChanging)
+                  _buildSpeedButton(controller, iconColor, barHeight),
+              ],
             ),
           ),
         ),
@@ -197,23 +191,20 @@ class _CupertinoControlsState extends State<CupertinoControls>
         duration: const Duration(milliseconds: 300),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(10.0),
-          child: BackdropFilter(
-            filter: ui.ImageFilter.blur(sigmaX: 10.0),
-            child: Container(
-              height: barHeight,
-              padding: EdgeInsets.only(
-                left: buttonPadding,
-                right: buttonPadding,
-              ),
-              color: backgroundColor,
-              child: Center(
-                child: Icon(
-                  chewieController.isFullScreen
-                      ? CupertinoIcons.arrow_down_right_arrow_up_left
-                      : CupertinoIcons.arrow_up_left_arrow_down_right,
-                  color: iconColor,
-                  size: 16,
-                ),
+          child: Container(
+            height: barHeight,
+            padding: EdgeInsets.only(
+              left: buttonPadding,
+              right: buttonPadding,
+            ),
+            color: backgroundColor,
+            child: Center(
+              child: Icon(
+                chewieController.isFullScreen
+                    ? CupertinoIcons.arrow_down_right_arrow_up_left
+                    : CupertinoIcons.arrow_up_left_arrow_down_right,
+                color: iconColor,
+                size: 16,
               ),
             ),
           ),
@@ -299,23 +290,20 @@ class _CupertinoControlsState extends State<CupertinoControls>
         duration: const Duration(milliseconds: 300),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(10.0),
-          child: BackdropFilter(
-            filter: ui.ImageFilter.blur(sigmaX: 10.0),
+          child: Container(
+            color: backgroundColor,
             child: Container(
-              color: backgroundColor,
-              child: Container(
-                height: barHeight,
-                padding: EdgeInsets.only(
-                  left: buttonPadding,
-                  right: buttonPadding,
-                ),
-                child: Icon(
-                  (_latestValue != null && _latestValue.volume > 0)
-                      ? Icons.volume_up
-                      : Icons.volume_off,
-                  color: iconColor,
-                  size: 16,
-                ),
+              height: barHeight,
+              padding: EdgeInsets.only(
+                left: buttonPadding,
+                right: buttonPadding,
+              ),
+              child: Icon(
+                (_latestValue != null && _latestValue.volume > 0)
+                    ? Icons.volume_up
+                    : Icons.volume_off,
+                color: iconColor,
+                size: 16,
               ),
             ),
           ),
