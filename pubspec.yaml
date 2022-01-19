@@ -11,9 +11,7 @@ dependencies:
   cupertino_icons: ^1.0.0
   flutter:
     sdk: flutter
-  hb_video_player:
-    git:
-      url: https://gitee.com/zhengheshi/hb_video_player.git
+  video_player: ^1.0.0
   wakelock: ^0.2.1+1
 
 dev_dependencies:
