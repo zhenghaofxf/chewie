@@ -9,7 +9,7 @@ import 'package:chewie/src/utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:video_player/video_player.dart';
+import 'package:hb_video_player/video_player.dart';
 
 class CupertinoControls extends StatefulWidget {
   const CupertinoControls({
@@ -112,7 +112,7 @@ class _CupertinoControlsState extends State<CupertinoControls>
     controller = chewieController.videoPlayerController;
 
     playPauseIconAnimationController ??= AnimationController(
-      vsync: this,
+      // vsync: this,
       duration: const Duration(milliseconds: 400),
       reverseDuration: const Duration(milliseconds: 400),
     );

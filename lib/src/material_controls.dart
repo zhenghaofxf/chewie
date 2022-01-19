@@ -5,7 +5,7 @@ import 'package:chewie/src/chewie_progress_colors.dart';
 import 'package:chewie/src/material_progress_bar.dart';
 import 'package:chewie/src/utils.dart';
 import 'package:flutter/material.dart';
-import 'package:video_player/video_player.dart';
+import 'package:hb_video_player/video_player.dart';
 
 class MaterialControls extends StatefulWidget {
   const MaterialControls({Key key}) : super(key: key);
@@ -100,7 +100,7 @@ class _MaterialControlsState extends State<MaterialControls>
     controller = chewieController.videoPlayerController;
 
     playPauseIconAnimationController ??= AnimationController(
-      vsync: this,
+      // vsync: this,
       duration: const Duration(milliseconds: 400),
       reverseDuration: const Duration(milliseconds: 400),
     );
